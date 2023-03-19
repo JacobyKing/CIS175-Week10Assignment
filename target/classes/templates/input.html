@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert New House</title>
+</head>
+<body>
+	<form th:object="${newHouse}" th:action="@{/update/{id}(id=${newHouse.id})}" method=POST>
+		Address: <input name="address" size="20" th:field="*{address}"> <br />
+		City: <input name="city" size="10" th:field="*{city}"><br />
+		State: <input name="state" size="10" th:field="*{state}"><br />
+		Zip Code: <input name="zipCode" size="5" th:field="*{zipCode}"><br />
+		Price: $<input name="price" size="9" th:field="*{price}"><br />
+		<input name="submit" type="submit" value="submit"/>
+	</form>
+	<a href="viewAll">View all Houses</a>
+</body>
+</html>
